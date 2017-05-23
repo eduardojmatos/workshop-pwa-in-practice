@@ -1,0 +1,44 @@
+{
+  "name": "pwa-in-practice",
+  "version": "0.0.0",
+  "description": "Workshop: PWA in Practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"no test for now\"",
+    "build": "babel src -d build/",
+    "copy-html": "cp src/*.html build/",
+    "watch:js": "onchange \"src/*.js\" \"src/javascripts/\" -p 10 -- npm run build",
+    "watch:html": "onchange \"src/*.html\" -p 10 -- npm run copy-html",
+    "watch": "npm-run-all watch:js watch:html",
+    "server": "http-server -p 5000 build/",
+    "dev": "npm-run-all -p watch server"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/eduardojmatos/pwa-in-practice.git"
+  },
+  "keywords": [
+    "pwa",
+    "workshop"
+  ],
+  "author": "Eduardo Matos <eduardoj.matos@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/eduardojmatos/workshop-pwa-in-practice#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-airbnb": "^2.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "http-server": "^0.9.0",
+    "npm-run-all": "^4.0.2",
+    "onchange": "^3.2.1"
+  }
+}
