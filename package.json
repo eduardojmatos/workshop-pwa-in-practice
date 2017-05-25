@@ -9,12 +9,14 @@
     "copy-html": "cp src/*.html build/",
     "copy-manifest": "cp src/*.json build/",
     "copy-images": "cp src/images/* build/images/",
-    "watch:js": "onchange \"src/*.js\" \"src/javascripts/\" -p 10 -- npm run build",
-    "watch:html": "onchange \"src/*.html\" -p 10 -- npm run copy-html",
-    "watch:manifest": "onchange \"src/*.json\" -p 10 -- npm run copy-manifest",
-    "watch:images": "onchange \"src/images/*\" -p 10 -- npm run copy-images",
+    "watch:js": "onchange \"src/*.js\" \"src/javascripts/\" -p 10 -i -- npm run build",
+    "watch:html": "onchange \"src/*.html\" -p 10 -i -- npm run copy-html",
+    "watch:manifest": "onchange \"src/*.json\" -p 10 -i -- npm run copy-manifest",
+    "watch:images": "onchange \"src/images/*\" -p 10 -i -- npm run copy-images",
     "watch": "npm-run-all watch:js watch:html watch:manifest watch:images",
+    "test-pwa": "lighthouse $PWA_URL",
     "server": "http-server -p 5000 build/",
+    "ngrok": "ngrok start -config ./ngrok.yml pwa",
     "start": "npm-run-all -p watch server"
   },
   "engines": {
@@ -42,6 +44,7 @@
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
     "http-server": "^0.9.0",
+    "lighthouse-cli": "^0.1.2",
     "npm-run-all": "^4.0.2",
     "onchange": "^3.2.1"
   }

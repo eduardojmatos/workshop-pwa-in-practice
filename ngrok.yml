@@ -1,0 +1,5 @@
+console_ui_color: transparent
+tunnels:
+  pwa:
+    proto: http
+    addr: 5000
