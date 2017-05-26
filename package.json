@@ -4,10 +4,11 @@
   "description": "Workshop: PWA in Practice",
   "main": "index.js",
   "scripts": {
+    "create-build-dir": "test -d build && mkdir -p build",
     "test": "echo \"no test for now\"",
     "build": "babel src -d build/",
-    "copy-html": "cp src/*.html build/",
-    "copy-manifest": "cp src/*.json build/",
+    "copy-html": "cp src/*.html build/ || echo 'NOT FOUND ANY *.html'",
+    "copy-manifest": "cp src/*.json build/ || echo 'NOT FOUND ANY *.json'",
     "copy-images": "cp -r src/images build/",
     "watch:js": "onchange \"src/**/*.js\" -p 10 -i -- npm run build",
     "watch:html": "onchange \"src/*.html\" -p 10 -i -- npm run copy-html",
