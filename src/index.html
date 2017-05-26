@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Todo List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/css/materialize.min.css" />
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <div class="container nav-wrapper">
+          <a href="#!" class="brand-logo">Todo List</a>
+        </div>
+      </nav>
+
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Todo List App with PWA concepts</span>
+          <p>Just a test of cache first approach</p>
+        </div>
+      </div>
+    </main>
+
+    <script src="/javascripts/app.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        navigator.serviceWorker.register('/sw.js', {scope: '/'}).then(function (registration) {
+          console.log('Service Worker registered!');
+        }).catch(function (err) {
+          console.error('Oops', err);
+        });
+      })
+    </script>
+  </body>
+</html>
