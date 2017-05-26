@@ -1,7 +1,6 @@
 const urls = [
   '/',
   '/index.html',
-  '/javascripts/modules/save-local.js',
   '/javascripts/app.js',
   '/css/materialize.min.css',
   '/manifest.json',
