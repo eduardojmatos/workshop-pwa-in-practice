@@ -1,16 +1,21 @@
 module.exports = {
-  'gstaticFileGlobs': [
-    '/',
-    '/index.html',
-    '/manifest.json',
-    '/javascripts/modules/save-local.js',
-    '/javascripts/app.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js',
+  'root': 'build/',
+  'staticFileGlobs': [
+    'index.html',
+    'manifest.json',
+    'css/materialize.min.css',
+    'javascripts/app.js',
   ],
-  'gruntimeCaching': [{
-    'gurlPattern': '/(.*)',
-    'ghandler': 'cacheFirst',
-  }],
+  'stripPrefix': 'build/',
+  'runtimeCaching': [
+    {
+      'urlPattern': /\/(.*)/g,
+      'handler': 'cacheFirst',
+    },
+    {
+      'urlPattern': /cdnjs/g,
+      'handler': 'networkFirst'
+    }
+  ],
 };
 
