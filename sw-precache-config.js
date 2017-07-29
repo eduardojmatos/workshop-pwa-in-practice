@@ -1,10 +1,10 @@
 module.exports = {
   'root': 'build/',
   'staticFileGlobs': [
-    'index.html',
-    'manifest.json',
-    'css/materialize.min.css',
-    'javascripts/app.js',
+    'build/index.html',
+    'build/manifest.json',
+    'build/css/materialize.min.css',
+    'build/javascripts/app.js',
   ],
   'stripPrefix': 'build/',
   'runtimeCaching': [
